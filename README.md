@@ -142,7 +142,7 @@ To ensure fair and consistent training, we implement the online fine-tuning pipe
 
 ## Citation
 ```
-@article{liang2026larbrid,
+@inproceedings{liang2026larbrid,
   author    = {Liang, Yuanchu and Yang, Yue and He, An-Chi and Kurniawati, Hanna},
   title     = {Efficient Diffusion Policy Fine Tuning with Latent Noise Representation Bridging},
   journal   = {Conference on Neural Information Processing Systems (NeurIPS)},
