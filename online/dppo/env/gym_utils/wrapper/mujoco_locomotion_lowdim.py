@@ -1,0 +1,64 @@
+"""
+Environment wrapper for Gym environments (MuJoCo locomotion tasks) with state observations.
+
+For consistency, we will use Dict{} for the observation space, with the key "state" for the state observation.
+"""
+
+import numpy as np
+import gymnasium as gym
+from gymnasium import spaces
+
+
+class MujocoLocomotionLowdimWrapper(gym.Env):
+    def __init__(
+        self,
+        env,
+        normalization_path,
+    ):
+        self.env = env
+
+        # setup spaces
+        self.action_space = env.action_space
+        normalization = np.load(normalization_path)
+        self.obs_min = normalization["obs_min"]
+        self.obs_max = normalization["obs_max"]
+        self.action_min = normalization["action_min"]
+        self.action_max = normalization["action_max"]
+
+        self.observation_space = spaces.Dict()
+        obs_example, _ = self.env.reset()  # gymnasium v5: returns (obs, info)
+        low = np.full_like(obs_example, fill_value=-1)
+        high = np.full_like(obs_example, fill_value=1)
+        self.observation_space["state"] = spaces.Box(
+            low=low,
+            high=high,
+            shape=low.shape,
+            dtype=low.dtype,
+        )
+
+    def reset(self, **kwargs):
+        seed = kwargs.get("seed", None)
+        reset_kwargs = {}
+        if seed is not None:
+            reset_kwargs["seed"] = seed
+        raw_obs, _ = self.env.reset(**reset_kwargs)
+
+        obs = self.normalize_obs(raw_obs)
+        return {"state": obs}
+
+    def normalize_obs(self, obs):
+        return 2 * ((obs - self.obs_min) / (self.obs_max - self.obs_min + 1e-6) - 0.5)
+
+    def unnormalize_action(self, action):
+        action = (action + 1) / 2  # [-1, 1] -> [0, 1]
+        return action * (self.action_max - self.action_min) + self.action_min
+
+    def step(self, action):
+        raw_action = self.unnormalize_action(action)
+        raw_obs, reward, terminated, truncated, info = self.env.step(raw_action)
+
+        obs = self.normalize_obs(raw_obs)
+        return {"state": obs}, reward, terminated, truncated, info
+
+    def render(self, **kwargs):
+        return self.env.render()
