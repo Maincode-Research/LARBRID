@@ -1,13 +1,7 @@
 <div align="center">
 
-<div id="user-content-toc" style="margin-bottom: 50px">
-  <ul align="center" style="list-style: none;">
-    <summary>
-      <h1>Efficient Diffusion Policy Fine Tuning with Latent Noise Representation Bridging</h1>
-      <!-- <h2><a href="https://arxiv.org/abs/2502.02538">Paper</a> &emsp; <a href="https://seohong.me/projects/fql/">Project page</a></h2> -->
-    </summary>
-  </ul>
-</div>
+<h1>Efficient Diffusion Policy Fine Tuning with Latent Noise Representation Bridging</h1>
+<!-- <h2><a href="https://arxiv.org/abs/2502.02538">Paper</a> &emsp; <a href="https://seohong.me/projects/fql/">Project page</a></h2> -->
 
 <img src="assets/larbrid.png" width="80%">
 
