@@ -61,7 +61,7 @@ train:
   batch_size: 256
   train_freq: 2 # Update model after this many environment steps
   utd: 20 # Number of gradient steps to take per update
-  noise_feature_grad_steps: 3
+  noise_feature_grad_steps: 1
   use_layer_norm: True
   layer_size: 512 # Layer size for actor and critic
   num_layers: 2 # this is not used, but just comply with the code, see actor_num_layers and critic_num_layers below
