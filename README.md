@@ -9,7 +9,7 @@
 
 ## Overview
 
-Latent Representation Bridging for Diffusion (LARBRID) is a simple algorithm derived from the Latent Noise Linear MDP (LNL-MDP) framework. The framework solves the commonly encountered noise aliasing problem by aligning the action and noise representations. The combined effect of removing noise aliasing and learning a powerful representation makes LARBRID excel at fine-tuning diffusion and flow policies.
+Latent Representation Bridging for Diffusion (LARBRID) is a simple algorithm derived from the Latent Noise Linear MDP (LNL-MDP) framework. The framework solves the commonly encountered noise aliasing problem by aligning the action and noise representations. The combined effect of removing noise aliasing and learning a powerful representation makes LARBRID excel at fine-tuning diffusion and flow policies. For our code for fine tuning VLA model π₀, see [this repo](https://github.com/Maincode-Research/LARBRID-Pi0).
 
 ## Installation
 For a fair comparison, our experiments are built around existing online and offline baselines separately. Make sure you run each experiment under the corresponding sub-directory, as the online and offline experiments do not mix. First, clone the entire repository:
