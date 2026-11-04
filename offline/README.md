@@ -10,7 +10,7 @@ This directory contains the offline implementations of LARBRID-I (`larbrid_i`), 
 
 ## Installation
 
-See the main README for details on installation and setup.
+See the [main README](https://github.com/Maincode-Research/LARBRID/blob/main/README.md) for details on installation and setup.
 
 ## Usage
 

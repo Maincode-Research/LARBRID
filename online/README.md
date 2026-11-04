@@ -8,7 +8,7 @@
 This directory contains the online implementations of LARBRID (`larbrid`), its $\psi$-only simplification variant LARBRID-Psi (`larbrid_psi`) and the separate critic ablation (`larbrid_separate_critic`). Experiments support both Robomimic and Gymnasium tasks. Refer to the main README for more details.
 
 ## Installation
-See the main README for details on installation and setup.
+See the [main README](https://github.com/Maincode-Research/LARBRID/blob/main/README.md) for details on installation and setup.
 
 We use the same pre-trained diffusion policy checkpoints as DSRL and DPPO, which can be found [here](https://drive.google.com/drive/folders/1kzC49RRFOE7aTnJh_7OvJ1K5XaDmtuh1?usp=share_link). Download the contents of this folder and place them in `./dppo/log`.
 
