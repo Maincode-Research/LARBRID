@@ -1,7 +1,8 @@
 <div align="center">
 
 <h1>Efficient Diffusion Policy Fine Tuning with Latent Noise Representation Bridging</h1>
-<!-- <h2><a href="https://arxiv.org/abs/2502.02538">Paper</a> &emsp; <a href="https://seohong.me/projects/fql/">Project page</a></h2> -->
+[![arXiv](https://img.shields.io/badge/arXiv-2606.05555-b31b1b.svg)](https://arxiv.org/abs/2611.07275)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 <img src="assets/larbrid.png" width="80%">
 
